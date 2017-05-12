@@ -5,7 +5,16 @@
         <header>
         <h1 class="post-title">{{{title}}}</h1>
         <div class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></div>
-        </header>
+        <script>
+	var _hmt = _hmt || [];
+	(function() {
+  		var hm = document.createElement("script");
+  		hm.src = "https://hm.baidu.com/hm.js?36dccb819c62eda950887599acc7592e";
+  		var s = document.getElementsByTagName("script")[0]; 
+  		s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	</header>
         <section class="post-content">
             {{content}}
         </section>
@@ -28,7 +37,13 @@
                 <i class="fa fa-2x fa-fw fa-google-plus-square" style="margin-left: -8px"></i> <span class="hidden">Google+</span>
             </a>
         </section>
-        <footer class="post-footer">
+        <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+	<script>
+  	var cloudTieConfig = {url: document.location.href, sourceId: "",productKey: "1fbeb623f67749dcb9de71f309f63eaf",target: "cloud-tie-wrapper" };
+	</script>
+	<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+	
+	<footer class="post-footer">
             {{> post-author}}
         </footer>
         {{/post}}
