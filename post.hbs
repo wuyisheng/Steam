@@ -21,7 +21,12 @@
         <section class="post-tags">
             {{#if tags}}<div class="post-meta tags"><i class="fa fa-fw fa-tags"></i> {{tags}}</div>{{/if}}
         </section>
-        <section class="share">
+
+        <footer class="post-footer">
+            {{> post-author}}
+        </footer>       
+
+	 <section class="share">
             <p class="backtotop"><a data-scroll href="#site-head"><i class="fa fa-lg fa-fw fa-angle-double-up"></i></a><a data-scroll class="backtotoptext" href="#site-head"> Back to top</a></p>
             <p class="info prompt">Share</p>
             <a href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}" title="Share on Twitter"
@@ -37,17 +42,15 @@
                 <i class="fa fa-2x fa-fw fa-google-plus-square" style="margin-left: -8px"></i> <span class="hidden">Google+</span>
             </a>
         </section>
-        <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+
+	{{!> comments-disqus}}	
+	<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 	<script>
   	var cloudTieConfig = {url: document.location.href, sourceId: "",productKey: "1fbeb623f67749dcb9de71f309f63eaf",target: "cloud-tie-wrapper" };
 	</script>
 	<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
 	
-	<footer class="post-footer">
-            {{> post-author}}
-        </footer>
         {{/post}}
-        {{!> comments-disqus}}
         {{!> comments-facebook}}
         {{!> comments-google-plus}}
     </article>
